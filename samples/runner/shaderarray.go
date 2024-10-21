@@ -344,6 +344,10 @@ func (b *shaderArrayBuilder) buildL1VTLBs(sa *shaderArray) {
 		if b.visTracer != nil {
 			tracing.CollectTrace(tlb, b.visTracer)
 		}
+
+		if b.memTracer != nil {
+			tracing.CollectTrace(tlb, b.memTracer)
+		}
 	}
 }
 
@@ -421,6 +425,10 @@ func (b *shaderArrayBuilder) buildL1STLB(sa *shaderArray) {
 	if b.visTracer != nil {
 		tracing.CollectTrace(tlb, b.visTracer)
 	}
+
+	if b.memTracer != nil {
+		tracing.CollectTrace(tlb, b.memTracer)
+	}
 }
 
 func (b *shaderArrayBuilder) buildL1SCache(sa *shaderArray) {
@@ -494,6 +502,10 @@ func (b *shaderArrayBuilder) buildL1ITLB(sa *shaderArray) {
 
 	if b.visTracer != nil {
 		tracing.CollectTrace(tlb, b.visTracer)
+	}
+
+	if b.memTracer != nil {
+		tracing.CollectTrace(tlb, b.memTracer)
 	}
 }
 
